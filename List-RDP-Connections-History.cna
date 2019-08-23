@@ -11,7 +11,7 @@ popup beacon_bottom {
         local('$bid');
         foreach $bid ($1){
           bpowershell_import($bid, script_resource("ListLogged-inUsers.ps1"));
-          bpowershell($bid, "ListLogged-inUsers");
+          bpowershell($bid, "Invoke-ListLogged-inUsers");
         }
       }
     }
