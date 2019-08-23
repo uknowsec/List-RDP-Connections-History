@@ -1,0 +1,18 @@
+popup beacon_bottom {
+    menu "List-RDP-Connections-History" {
+      item "ListAllUsers"{
+        local('$bid');
+        foreach $bid ($1){
+          bpowershell_import($bid, script_resource("ListAllUsers.ps1"));
+		  bpowershell($bid, "Invoke-ListAllUsers");
+        }
+      }
+      item "ListLogged-inUsers"{
+        local('$bid');
+        foreach $bid ($1){
+          bpowershell_import($bid, script_resource("ListLogged-inUsers.ps1"));
+          bpowershell($bid, "ListLogged-inUsers");
+        }
+      }
+    }
+  }
